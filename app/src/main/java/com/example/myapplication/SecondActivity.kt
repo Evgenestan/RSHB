@@ -13,6 +13,12 @@ class SecondActivity : AppCompatActivity() {
 
     lateinit var pref: SharedPreferences
 
+    override fun onBackPressed() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
