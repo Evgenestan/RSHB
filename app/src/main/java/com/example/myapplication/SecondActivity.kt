@@ -13,6 +13,12 @@ class SecondActivity : AppCompatActivity() {
 
     lateinit var pref: SharedPreferences
 
+    override fun onBackPressed() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
@@ -22,13 +28,10 @@ class SecondActivity : AppCompatActivity() {
         val intent1 = Intent(
             this,
             thirdActivity::class.java);
-
         val intent2 = Intent(
             this,
             fourActivity::class.java);
-
         val editor = pref.edit()
-
         val check = pref.getString("name","no")
 
         if (check != "no") { startActivity(intent2); finish(); } //проверка на уже существующую заявку
