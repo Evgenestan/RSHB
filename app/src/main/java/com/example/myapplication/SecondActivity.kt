@@ -86,7 +86,6 @@ class SecondActivity : AppCompatActivity() {
             val manager = supportFragmentManager
             myDialogFragment.show(manager, "myDialog")
             upload()
-            //myDialogFragment.dialog?.cancel()
             editor.putString("name", Name.text.toString())
             editor.putString("surname", surname.text.toString())
             editor.putString("phone", phone.text.toString())
