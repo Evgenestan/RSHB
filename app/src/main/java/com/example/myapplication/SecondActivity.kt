@@ -65,10 +65,13 @@ class SecondActivity : AppCompatActivity() {
         val intent1 = Intent(
             this,
             thirdActivity::class.java);
+
         val intent2 = Intent(
             this,
             fourActivity::class.java);
+
         val editor = pref.edit()
+
         val check = pref.getString("name","no")
 
         if (check != "no") { startActivity(intent2); finish(); } //проверка на уже существующую заявку
